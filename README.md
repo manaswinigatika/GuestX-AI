@@ -8,3 +8,6 @@ Real-Time Sentiment Monitoring: Proactively addresses guest feedback for improve
 Enhanced Guest Experience: Dynamic personalization increases guest satisfaction and engagement.
 
 Automated Alerts: Staff receive notifications to resolve issues and optimize service delivery.
+
+
+1. ass1_dining_xgboost.ipynb -  develops an XGBoost-based machine learning model to predict a customer’s favorite dish based on dining preferences and behavior. It involves data preprocessing, feature engineering, one-hot encoding, and time-aware model training. The system ensures real-world applicability by handling missing data, optimizing hyperparameters, and evaluating model performance using accuracy, log loss, and feature importance analysis.
