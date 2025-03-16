@@ -1,5 +1,5 @@
 # GuestX-AI
-# GuestX-AI: AI-Powered Guest Experience Personalization System
+# AI-Powered Guest Experience Personalization System
 
 # This project is part of my Infosys Springboard Internship 5.0.
 
