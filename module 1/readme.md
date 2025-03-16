@@ -11,5 +11,4 @@
 - **demo.py**: A **Streamlit app** that uses the trained model to predict dishes and display personalized discounts based on user inputs.
 
 - **featureimportance.png**: Visual representation of **feature importance analysis** from the trained model.
-- ![Feature Importance](featureimportance.png)
 
