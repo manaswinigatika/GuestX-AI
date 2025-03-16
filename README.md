@@ -1,24 +1,98 @@
 # GuestX-AI
-AI-Powered Guest Experience Personalization uses LLMs like OpenAI GPT and Meta LLaMA to analyze guest feedback (mock CRM data), track sentiment trends, and personalize recommendations for amenities and activities. Real-time alerts enable service teams to adapt dynamically, ensuring tailored experiences that evolve with guest preferences.
+GuestX-AI: AI-Powered Guest Experience Personalization System
 
-Personalized Recommendations: Dining, activity, and amenity suggestions based on guest behavior analysis.
+Overview
 
-Real-Time Sentiment Monitoring: Proactively addresses guest feedback for improved satisfaction.
+GuestX-AI is an AI-powered system designed to enhance guest experiences in the hospitality industry. It leverages machine learning, NLP, and interactive dashboards to personalize dining recommendations, analyze guest reviews, and provide hotel management with actionable insights.
 
-Enhanced Guest Experience: Dynamic personalization increases guest satisfaction and engagement.
+Features
 
-Automated Alerts: Staff receive notifications to resolve issues and optimize service delivery.
+Predict Favorite Dishes: Uses XGBoost to recommend dishes based on guest dining behavior.
 
+Review Sentiment Analysis: NLP-powered analysis of customer reviews to determine sentiment.
 
-1. ass1_dining_xgboost.ipynb -  develops an XGBoost-based machine learning model to predict a customer’s favorite dish based on dining preferences and behavior. It involves data preprocessing, feature engineering, one-hot encoding, and time-aware model training. The system ensures real-world applicability by handling missing data, optimizing hyperparameters, and evaluating model performance using accuracy, log loss, and feature importance analysis.
-2. training_and_features.py preprocesses data, generates features, and trains an XGBoost model for dish recommendations, while demo.py is a Streamlit app that uses the model to predict dishes and display discounts based on user inputs.
-3. UI 1,2 - The UI and UI 2 images show UI screens of a hotel booking system built with Streamlit. The first screen (UI) displays a booking form where users enter their details, including customer ID, name, check-in/check-out dates, and age. The second screen (UI 2) confirms the booking details and provides personalized discounts based on user data retrieved from MongoDB.
-4. ass3 - review analysis.ipynb - The code generates semantic embeddings for hotel customer reviews using Together AI, upserts them into Pinecone for efficient retrieval, and performs sentiment analysis to extract insights based on user queries.
-5. review_sentimentanalysisUI.py - The code performs sentiment analysis on hotel customer reviews using Together AI embeddings and Pinecone vector search. It allows users to filter reviews by rating, date, and query, providing AI-generated sentiment summaries in a Streamlit UI.
-6. newreview.py - New review submission is enabled by collecting user details such as Customer ID, Room Number, Rating, and Review through a Streamlit form. The review is stored in an Excel file (`reviews_data.xlsx`), embeddings are generated using Together AI, and the data is uploaded with metadata to Pinecone for future retrieval.
-7. final_dashboard_ui.py: The dashboard’s interactive interface is organized into multiple tabs to separate different analytics areas, providing comprehensive insights into dining, booking, and customer reviews. Key components include:
-Dining Analytics Tab: Displays key metrics (total orders, popular cuisine, peak order hour), interactive visualizations (scatter and histogram charts)
-  Customer Behavior: Uses a Plotly Express scatter plot to map customer age (x) vs. dish price (y) with marker size and color representing order details, filtered by selected cuisine.
- Temporal Pattern: Generates a Plotly Express histogram from the order_time column (converted to hours) with 24 bins to reveal peak ordering periods.
-Booking Insights Tab: Allows users to filter booking data by month and year, view weekday/weekend booking percentages, and explore trend forecasts using Exponential Smoothing (including next week’s predictions and historical trends).
-Recent Reviews Tab: Presents recent happy and angry reviews in a visually appealing format with colored review boxes, offering a quick overview of customer sentiment.
+Interactive Dashboards: Visualizes booking trends, dining preferences, and sentiment analysis using Dash & Plotly.
+
+Real-Time Review Alerts: Sends automated alerts to hotel management if a guest staying in the hotel gives a negative review.
+
+Streamlit UI: User-friendly interface for dish recommendations and review analysis.
+
+Project Modules
+
+Module 1: Predicting Customer's Favorite Dish
+
+Trains an XGBoost model to predict a customer’s favorite dish.
+
+Preprocesses data, performs feature engineering, and applies one-hot encoding.
+
+Outputs a trained model used for dish recommendations.
+
+Key Files:
+
+ass1_dining_xgboost.ipynb: Develops and trains the XGBoost model.
+
+training_and_features.py: Data preprocessing and feature engineering.
+
+demo.py: Streamlit app for dish prediction.
+
+featureimportance.png: Feature importance visualization.
+
+Module 2: Database & UI Setup
+
+Stores customer and dining data in MongoDB.
+
+Implements a hotel booking form UI for data entry.
+
+Runs the trained model and serves predictions via Streamlit.
+
+Key Files:
+
+customer_features.xlsx, cuisine_features.xlsx, features.xlsx
+
+encoder.pkl, label_encoder.pkl, xgb_model_dining.pkl
+
+demo.py: Streamlit-based deployment.
+
+Hotel booking form UI
+
+Module 3: Review Sentiment Analysis
+
+Uses Pinecone and Together.AI for NLP and vector search.
+
+Implements a sentiment analysis UI.
+
+Sends automated emails for negative reviews.
+
+Key Files:
+
+ass3 - review analysis.ipynb: NLP-based sentiment analysis.
+
+review_sentimentanalysisUI.py: UI for analyzing and visualizing review sentiments.
+
+newreview.py: Processes new reviews.
+
+email sending code part.py: Automates email notifications.
+
+UI1 - review analysis.png, UI2 - review analysis.png: UI outputs.
+
+Module 4: Data Storage, Processing & Dashboards
+
+Stores booking, dining, and review data in MongoDB.
+
+Fetches and processes data using Pandas.
+
+Creates interactive dashboards with Dash & Plotly.
+
+Integrates sentiment analysis with real-time email alerts.
+
+Key Files:
+
+bookingdashboard.py: Hotel booking insights dashboard.
+
+diningdashboard.py: Dining trends dashboard.
+
+reviewsdashboard.py: Sentiment analysis visualization.
+
+final_dashboard_ui.py: Integrated UI.
+
+report output dashboard.pdf, output UI images: Documentation and UI snapshots.
