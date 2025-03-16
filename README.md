@@ -1,6 +1,8 @@
 # GuestX-AI
 # GuestX-AI: AI-Powered Guest Experience Personalization System
 
+# This project is part of my Infosys Springboard Internship 5.0.
+
 ## Overview
 
 GuestX-AI is an AI-powered system designed to enhance guest experiences in the hospitality industry. It leverages machine learning, NLP, and interactive dashboards to personalize dining recommendations, analyze guest reviews, and provide hotel management with actionable insights.
